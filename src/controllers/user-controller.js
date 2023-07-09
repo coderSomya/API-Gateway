@@ -5,12 +5,12 @@ const {ErrorResponse, SuccessResponse}= require("../utils/common")
 const AppError = require('../utils/errors/app-error')
 const { Sequelize } = require('../models')
 
-async function  createUser(req, res){
+async function signup(req, res){
 
     try{
-        const user = await UserService.createUser({
+        const user = await UserService.create({
            email: req.body.email,
-           password: req.body.passwword
+           password: req.body.password
         })
         SuccessResponse.message= "successfully created the user";
         SuccessResponse.data= user;
@@ -36,5 +36,5 @@ async function  createUser(req, res){
 
 
 module.exports ={
-    createCity
+   signup
 }

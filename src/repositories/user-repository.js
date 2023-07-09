@@ -3,8 +3,8 @@ const {User} = require("../models")
 
 class UserRepository extends CrudRepository{
     constructor(){
-    super(user);
+    super(User);
     }
 }
 
-module.exports = CrudRepository;
+module.exports = UserRepository;
